@@ -1,0 +1,302 @@
+/**
+ * Copyright 2015 - 2017 Google Inc, Adam Yi. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+$footer-bg-color: #f5f5f5;
+$footer-color: #414141;
+$footer-heading-color: $footer-color;
+$footer-button-fill-color: $footer-bg-color;//$footer-color;
+$footer-underline-color: $footer-color;
+$footer-min-padding: 16px;
+$footer-padding-sides: 40px;
+$footer-heading-font-size: 14px;
+$footer-heading-line-height: (1.7 * $footer-heading-font-size);
+$footer-btn-size: 20px;
+
+.adamyi-footer {
+  padding: $footer-min-padding $footer-padding-sides;
+  color: $footer-color;
+  background-color: $footer-bg-color;
+  width: 100%;
+  height: 280px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.adamyi-footer--top-section:after,
+.adamyi-footer--middle-section:after,
+.adamyi-footer__top-section:after,
+.adamyi-footer__middle-section:after {
+  border-bottom: 1px solid #eee;
+}
+
+.adamyi-footer--top-section:after,
+.adamyi-footer--middle-section:after,
+.adamyi-footer--bottom-section:after,
+.adamyi-footer__top-section:after,
+.adamyi-footer__middle-section:after,
+.adamyi-footer__bottom-section:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.adamyi-footer--social-btn,
+.adamyi-footer__social-btn {
+  width: $footer-btn-size;
+  height: $footer-btn-size;
+
+  padding: 0;
+  margin: 0;
+
+  background-color: $footer-button-fill-color;
+
+  border: none;
+}
+
+.adamyi-footer--top-section h5,
+.adamyi-footer__top-section h5 {
+  display: inline-flex;
+  text-transform: uppercase;
+}
+
+.adamyi-footer--social-list,
+.adamyi-footer__social-list {
+  list-style: none;
+  display: inline-flex;
+  padding-left: 10px;
+}
+
+.adamyi-footer--social-list li,
+.adamyi-footer__social-list li {
+  float: left;
+
+  margin-bottom: 0;
+  margin-right: $footer-min-padding;
+}
+
+.adamyi-footer--list-section,
+.adamyi-footer__list-section {
+  display: block;
+
+  position: relative;
+}
+
+@media screen and (min-width: 760px) {
+  .adamyi-footer--list-section,
+  .adamyi-footer__list-section {
+    width: 33%;
+  }
+
+  .adamyi-footer--list-section:nth-child(1),
+  .adamyi-footer--list-section:nth-child(2),
+  .adamyi-footer__list-section:nth-child(1),
+  .adamyi-footer__list-section:nth-child(2) {
+    float: left;
+  }
+
+  .adamyi-footer--list-section:nth-child(3),
+  .adamyi-footer__list-section:nth-child(3) {
+    float: right;
+
+    &:after {
+      clear: right;
+    }
+  }
+
+  .adamyi-footer--list-section:nth-child(4),
+  .adamyi-footer__list-section:nth-child(4) {
+    clear: right;
+    float: right;
+  }
+
+  .adamyi-footer--middle-section:after,
+  .adamyi-footer__middle-section:after {
+    content: '';
+
+    display: block;
+
+    clear: both;
+  }
+
+  .adamyi-footer--bottom-section,
+  .adamyi-footer__bottom-section {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .adamyi-footer--list-section,
+  .adamyi-footer--list-section:nth-child(3),
+  .adamyi-footer--list-section:nth-child(4),
+  .adamyi-footer__list-section,
+  .adamyi-footer__list-section:nth-child(3),
+  .adamyi-footer__list-section:nth-child(4) {
+    width: 24%;
+
+    float: left;
+  }
+}
+
+.adamyi-footer--heading-checkbox,
+.adamyi-footer__heading-checkbox {
+  position: absolute;
+  width: 100%;
+  height: $footer-heading-line-height + ($footer-min-padding * 2);
+
+  padding: ($footer-min-padding * 2);
+  margin: 0;
+  margin-top: -$footer-min-padding;
+
+  cursor: pointer;
+
+  z-index: 1;
+  opacity: 0;
+
+  & + .adamyi-footer--heading:after,
+  & + .adamyi-footer__heading:after {
+    font-family: 'Material Icons';
+    content: '\E5CE'
+  }
+}
+
+.adamyi-footer--heading-checkbox:checked,
+.adamyi-footer__heading-checkbox:checked {
+  // WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10
+  // break consecutive "+" operators in some cases. Therefore, we need to use
+  // both here to cover all the bases.
+  & ~ .adamyi-footer--link-list,
+  & ~ .adamyi-footer__link-list,
+  & + .adamyi-footer--heading + .adamyi-footer--link-list,
+  & + .adamyi-footer__heading + .adamyi-footer__link-list {
+    display: none;
+  }
+
+  & + .adamyi-footer--heading:after,
+  & + .adamyi-footer__heading:after {
+    font-family: 'Material Icons';
+    content: '\E5CF'
+  }
+}
+
+.adamyi-footer--heading,
+.adamyi-footer__heading {
+  position: relative;
+  width: 100%;
+
+  padding-right: $footer-heading-line-height + $footer-min-padding;
+  margin-bottom: $footer-min-padding;
+
+  box-sizing:border-box;
+
+  font-size: $footer-heading-font-size;
+  line-height: $footer-heading-line-height;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  color: $footer-heading-color;
+}
+
+.adamyi-footer--heading:after,
+.adamyi-footer__heading:after {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: block;
+
+  width: $footer-heading-line-height;
+  height: $footer-heading-line-height;
+
+  background-size: cover;
+}
+
+.adamyi-footer--link-list,
+.adamyi-footer__link-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: $footer-min-padding * 2;
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}
+
+.adamyi-footer--link-list li,
+.adamyi-footer__link-list li {
+  line-height: 20px;
+}
+
+.adamyi-footer a,
+.adamyi-footer a {
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 760px) {
+  .adamyi-footer--heading-checkbox,
+  .adamyi-footer__heading-checkbox {
+    display: none;
+
+    & + .adamyi-footer--heading:after,
+    & + .adamyi-footer__heading:after {
+      content: '';
+    }
+  }
+  .adamyi-footer--heading-checkbox:checked,
+  .adamyi-footer__heading-checkbox:checked {
+    // WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10
+    // break consecutive "+" operators in some cases. Therefore, we need to use
+    // both here to cover all the bases.
+    & ~ .adamyi-footer--link-list,
+    & ~ .adamyi-footer__link-list,
+    & + .adamyi-footer__heading + .adamyi-footer__link-list,
+    & + .adamyi-footer--heading + .adamyi-footer--link-list {
+      display: block;
+    }
+
+    & + .adamyi-footer--heading:after,
+    & + .adamyi-footer__heading:after {
+      content: '';
+    }
+  }
+}
+
+.adamyi-footer--bottom-section,
+.adamyi-footer__bottom-section {
+  padding-top: $footer-min-padding;
+  margin-bottom: $footer-min-padding;
+}
+
+.adamyi-footer--bottom-section .adamyi-footer--link-list li,
+.adamyi-footer__bottom-section .adamyi-footer__link-list li {
+  float: left;
+
+  margin-bottom: 0;
+  margin-right: $footer-min-padding;
+}
