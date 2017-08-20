@@ -63,6 +63,20 @@ html, body {
   padding-bottom: 344px;
 }
 
+@media only screen and (min-width: 841px) {
+  .adamyi-main-content {
+    padding-left:50px;
+    padding-right: 50px
+  }
+}
+
+.adamyi-main-content {
+  padding-top: 30px;
+  margin: auto;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
 .mdc-button {
   text-overflow: ellipsis;
   white-space: nowrap;
