@@ -1,0 +1,37 @@
+.adanyi-nameline  {
+    line-height: 1.1em;
+}
+
+.adamyi-nameline p {
+    font-size: 40px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.adamyi-nameline .first-line {
+    color: #77909c;
+}
+
+.adamyi-nameline .second-line {
+    color: #0273d4;
+}
+
+.adamyi-affiliation-list {
+  list-style: none;
+}
+
+.adamyi-affiliation-check {
+    color: #0075d7;
+    margin-right: 12px;
+}
+
+.adamyi-home-logo {
+    background: url(/images/adamyi.white.web.svg) center center no-repeat;
+    height: 100%;
+}
+
+.adamyi-home-portfolio-button {
+    background: #2B85E7 url(/images/code.transparent.svg) 16px 0px no-repeat;
+    color: rgba(255,255,255,.87);
+    padding-left: 62px;
+}

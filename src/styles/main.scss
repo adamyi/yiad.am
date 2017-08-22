@@ -32,13 +32,13 @@ $mdc-theme-background: #fff;
 @import "@material/typography/mixins";
 @import "@material/button/mdc-button";
 @import "@material/toolbar/mdc-toolbar";
+@import "@material/layout-grid/mdc-layout-grid";
 
-@import "footer";
 //@import "mixins";
 //@import "header";
 //@import "post";
-//@import "home";
-//@import "footer";
+@import "home";
+@import "footer";
 //@import "syntax";
 //@import "css-aspect-ratio/css-aspect-ratio";
 

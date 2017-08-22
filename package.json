@@ -31,7 +31,9 @@
   },
   "dependencies": {
     "@material/button": "^0.3.11",
+    "@material/card": "^0.2.6",
     "@material/elevation": "^0.1.11",
+    "@material/layout-grid": "^0.4.2",
     "@material/toolbar": "^0.4.4",
     "@material/typography": "^0.3.0"
   },
