@@ -39,6 +39,8 @@ $mdc-theme-background: #fff;
 
 @import "home";
 @import "footer";
+@import "modal";
+@import "portfolio";
 @import "cv";
 
 html, body {
@@ -76,6 +78,14 @@ html, body {
   max-width: 1200px;
 }
 
+.adamyi-main-wide {
+  padding-top: 30px;
+  margin: auto;
+  box-sizing: border-box;
+  width: 80%;
+  min-width: 400px;
+}
+
 .mdc-button {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -86,4 +96,12 @@ html, body {
 
 .mdc-accent {
   color: $mdc-theme-accent;
+}
+
+.mdc-toolbar__icon {
+  padding:19px;
+}
+
+.mdc-toolbar__row .active{
+  border-bottom: 3px solid #fff;
 }

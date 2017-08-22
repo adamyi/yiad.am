@@ -1,6 +1,6 @@
 /*!
  *
- *  Copyright 2015 Google Inc. All rights reserved.
+ *  Copyright 2015-2017 Google Inc, Adam Yi. All rights reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -15,6 +15,10 @@
  *  limitations under the License
  *
  */
+
+// TODO: switch to webpack etc.
+// import {MDCDialog, MDCDialogFoundation, util} from '@material/dialog';
+
 /* eslint-env browser */
 (function() {
   'use strict';
@@ -71,5 +75,41 @@
     });
   }
 
-  // Your custom JavaScript goes here
 })();
+
+function renderPortfolio() {
+  alert("TODO");
+  /*
+  $.getJSON( "portfolio.json", function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      var name = val.name;
+      var abstract = val.abstract;
+      var url = val.url;
+      var details = val.details;
+      var image = val.image;
+      items.push( "<li id='" + key + "'>" + val + "</li>" );
+    });
+
+    $( "<ul/>", {
+      "class": "my-new-list",
+      html: items.join( "" )
+    }).appendTo( "body" );
+  }
+  */
+  $(document).on('click', '.adamyi-modal-button', function(evt) {
+    var tgt = $(evt.target);
+    $('#adamyi-modal-heading-text').html(tgt.attr('adamyi-modal-header'));
+    $('#adamyi-modal-details').html(tgt.attr('adamyi-modal-details'));
+    $('#adamyi-modal').css("display", "block");
+    $('#adamyi-modal-backdrop').css("display", "block");
+    $('body').css("overflow", "hidden");
+  });
+
+  $('#adamyi-modal-backdrop').click(function() {
+    $('#adamyi-modal').css("display", "none");
+    $('#adamyi-modal-backdrop').css("display", "none");
+    $('body').css("overflow", "auto");
+  });
+}
+

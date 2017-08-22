@@ -112,7 +112,6 @@ gulp.task('scripts', () =>
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
       './src/scripts/main.js'
-      // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
@@ -177,7 +176,8 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 
   gulp.watch(['src/**/*.html'], reload);
   gulp.watch(['src/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['src/scripts/**/*.js'], ['lint', 'scripts', reload]);
+  //gulp.watch(['src/scripts/**/*.js'], ['lint', 'scripts', reload]);
+  gulp.watch(['src/scripts/**/*.js'], ['scripts', reload]);
   gulp.watch(['src/images/**/*'], reload);
 });
 
@@ -201,7 +201,8 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'fonts', 'copy'],
+    //['lint', 'html', 'scripts', 'images', 'fonts', 'copy'],
+    ['html', 'scripts', 'images', 'fonts', 'copy'],
     'generate-service-worker',
     cb
   )
