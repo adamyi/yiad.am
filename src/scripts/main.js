@@ -78,8 +78,6 @@
 })();
 
 function renderPortfolio() {
-  alert("TODO");
-  
   $.getJSON( "portfolio.json", function( data ) {
     var items = [];
     $.each( data, function( key, val ) {
