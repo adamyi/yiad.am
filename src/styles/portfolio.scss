@@ -3,4 +3,12 @@
   width: 100%;
   max-width: 400px;
   margin: 0px 10px 15px 10px;
+  text-align: left;
+}
+
+.adamyi-portfolio-card .mdc-card__media {
+  //TODO: add a default background here
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 12.313rem;
 }
