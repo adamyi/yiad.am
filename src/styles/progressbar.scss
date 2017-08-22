@@ -1,0 +1,175 @@
+// Copyright 2017 Google Inc, Adam Yi. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+@import "@material/animation/functions";
+
+@keyframes primary-indeterminate-translate {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    animation-timing-function: cubic-bezier(.5, 0, .701732, .495819);
+    transform: translateX(0);
+  }
+
+  59.15% {
+    animation-timing-function: cubic-bezier(.302435, .381352, .55, .956352);
+    transform: translateX(83.67142%);
+  }
+
+  100% {
+    transform: translateX(200.611057%);
+  }
+}
+
+@keyframes primary-indeterminate-scale {
+  0% {
+    transform: scaleX(.08);
+  }
+
+  36.65% {
+    animation-timing-function: cubic-bezier(.334731, .12482, .785844, 1);
+    transform: scaleX(.08);
+  }
+
+  69.15% {
+    animation-timing-function: cubic-bezier(.06, .11, .6, 1);
+    transform: scaleX(.661479);
+  }
+
+  100% {
+    transform: scaleX(.08);
+  }
+}
+
+@keyframes secondary-indeterminate-translate {
+  0% {
+    animation-timing-function: cubic-bezier(.15, 0, .515058, .409685);
+    transform: translateX(0);
+  }
+
+  25% {
+    animation-timing-function: cubic-bezier(.31033, .284058, .8, .733712);
+    transform: translateX(37.651913%);
+  }
+
+  48.35% {
+    animation-timing-function: cubic-bezier(.4, .627035, .6, .902026);
+    transform: translateX(84.386165%);
+  }
+
+  100% {
+    transform: translateX(160.277782%);
+  }
+}
+
+@keyframes secondary-indeterminate-scale {
+  0% {
+    animation-timing-function: cubic-bezier(.205028, .057051, .57661, .453971);
+    transform: scaleX(.08);
+  }
+
+  19.15% {
+    animation-timing-function: cubic-bezier(.152313, .196432, .648374, 1.004315);
+    transform: scaleX(.457104);
+  }
+
+  44.15% {
+    animation-timing-function: cubic-bezier(.257759, -.003163, .211762, 1.38179);
+    transform: scaleX(.72796);
+  }
+
+  100% {
+    transform: scaleX(.08);
+  }
+}
+
+.adamyi-progressbar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  transform: translateZ(0);
+  transition: mdc-animation-exit-temporary(opacity, 250ms);
+  overflow: hidden;
+
+  &__bar {
+    animation: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    transition: mdc-animation-exit-temporary(transform, 250ms);
+  }
+
+  &__bar-inner {
+    background-color:#ffab40;
+
+    animation: none;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__buffering-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // SVG is optimized for data URI (https://codepen.io/tigt/post/optimizing-svgs-in-data-uris)
+    // stylelint-disable-next-line function-url-quotes
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' enable-background='new 0 0 5 2' xml:space='preserve' viewBox='0 0 5 2' preserveAspectRatio='none slice'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23e6e6e6'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 10px 4px;
+    animation: buffering 250ms infinite linear;
+  }
+
+  &__buffer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    transition: mdc-animation-exit-temporary(transform, 250ms);
+    background-color: #e6e6e6;
+  }
+
+  &__secondary-bar {
+    visibility: hidden;
+  }
+
+  &--indeterminate {
+    .adamyi-progressbar__bar {
+      transition: none;
+    }
+
+    .adamyi-progressbar__primary-bar {
+      animation: primary-indeterminate-translate 2s infinite linear;
+      left: -145.166611%;
+
+      > .adamyi-progressbar__bar-inner {
+        animation: primary-indeterminate-scale 2s infinite linear;
+      }
+    }
+
+    .adamyi-progressbar__secondary-bar {
+      animation: secondary-indeterminate-translate 2s infinite linear;
+      left: -54.888891%;
+      visibility: visible;
+
+      > .adamyi-progressbar__bar-inner {
+        animation: secondary-indeterminate-scale 2s infinite linear;
+      }
+    }
+  }
+}

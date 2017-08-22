@@ -84,8 +84,8 @@ function renderPortfolio() {
       //TODO: classification and tag of projects
       var name = val.name;
       var abstract_text = val.abstract_text;
-      var url = val.url; //TODO: project without url button
-      var details = val.details; //TODO: ajax details
+      var url = val.url;
+      var details = val.details;
       var image = val.image;
       var card = "<div class=\"mdc-card adamyi-portfolio-card\"><section class=\"mdc-card__media\"";
       if (image) {
@@ -103,16 +103,29 @@ function renderPortfolio() {
     });
 
     $('.adamyi-main-wide').html(items.join(""));
+    $('#main-progressbar').hide();
 
   });
   
   $(document).on('click', '.adamyi-modal-button', function(evt) {
     var tgt = $(evt.target);
+    $('#modal-progressbar').show();
     $('#adamyi-modal-heading-text').html(tgt.attr('adamyi-modal-header'));
-    $('#adamyi-modal-details').html(tgt.attr('adamyi-modal-details'));
+    $('#adamyi-modal-details').html("");
     $('#adamyi-modal').css("display", "block");
     $('#adamyi-modal-backdrop').css("display", "block");
     $('body').css("overflow", "hidden");
+    $.get(tgt.attr("adamyi-modal-details"), function (data) {
+      if ($('#adamyi-modal-heading-text').html() == tgt.attr('adamyi-modal-header')) {
+        $('#adamyi-modal-details').html(data);
+        $('#modal-progressbar').hide();
+      }
+    }).fail(function () {
+      if ($('#adamyi-modal-heading-text').html() == tgt.attr('adamyi-modal-header')) {
+        $('#adamyi-modal-details').html("Error loading details... Sorry");
+        $('#modal-progressbar').hide();
+      }
+    });
   });
 
   $('#adamyi-modal-backdrop').click(function() {
