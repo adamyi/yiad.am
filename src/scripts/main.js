@@ -79,24 +79,23 @@
 
 function renderPortfolio() {
   alert("TODO");
-  /*
+  
   $.getJSON( "portfolio.json", function( data ) {
     var items = [];
     $.each( data, function( key, val ) {
+      //TODO: classification and tag of projects
       var name = val.name;
-      var abstract = val.abstract;
-      var url = val.url;
-      var details = val.details;
+      var abstract_text = val.abstract_text;
+      var url = val.url; //TODO: project without url button
+      var details = val.details; //TODO: ajax details
       var image = val.image;
-      items.push( "<li id='" + key + "'>" + val + "</li>" );
+      items.push("<div class=\"mdc-card adamyi-portfolio-card\"><section class=\"mdc-card__media\" style=\"background-image: url(" + image + ");\"></section><section class=\"mdc-card__primary\"><h1 class=\"mdc-card__title mdc-card__title--large\">" + name + "</h1></section><section class=\"mdc-card__supporting-text\">" + abstract_text + "</section><section class=\"mdc-card__actions\"><a class=\"mdc-button mdc-button--compact mdc-card__action\" href=\"" + url + "\">Visit Site</a><button class=\"mdc-button mdc-button--compact mdc-card__action adamyi-modal-button\" adamyi-modal-header=\"" + name + "\" adamyi-modal-details=\"" + details + "\">Read More</button></section></div>");
     });
 
-    $( "<ul/>", {
-      "class": "my-new-list",
-      html: items.join( "" )
-    }).appendTo( "body" );
-  }
-  */
+    $('.adamyi-main-wide').html(items.join(""));
+
+  });
+  
   $(document).on('click', '.adamyi-modal-button', function(evt) {
     var tgt = $(evt.target);
     $('#adamyi-modal-heading-text').html(tgt.attr('adamyi-modal-header'));
