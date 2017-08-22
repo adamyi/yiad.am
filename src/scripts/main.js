@@ -87,7 +87,19 @@ function renderPortfolio() {
       var url = val.url; //TODO: project without url button
       var details = val.details; //TODO: ajax details
       var image = val.image;
-      items.push("<div class=\"mdc-card adamyi-portfolio-card\"><section class=\"mdc-card__media\" style=\"background-image: url(" + image + ");\"></section><section class=\"mdc-card__primary\"><h1 class=\"mdc-card__title mdc-card__title--large\">" + name + "</h1></section><section class=\"mdc-card__supporting-text\">" + abstract_text + "</section><section class=\"mdc-card__actions\"><a class=\"mdc-button mdc-button--compact mdc-card__action\" href=\"" + url + "\">Visit Site</a><button class=\"mdc-button mdc-button--compact mdc-card__action adamyi-modal-button\" adamyi-modal-header=\"" + name + "\" adamyi-modal-details=\"" + details + "\">Read More</button></section></div>");
+      var card = "<div class=\"mdc-card adamyi-portfolio-card\"><section class=\"mdc-card__media\"";
+      if (image) {
+        card += " style=\"background-image: url(" + image + ");\""
+      }
+      card += "></section><section class=\"mdc-card__primary\"><h1 class=\"mdc-card__title mdc-card__title--large\">" + name + "</h1></section><section class=\"mdc-card__supporting-text\">" + abstract_text + "</section><section class=\"mdc-card__actions\">";
+      if (url) {
+        card += "<a class=\"mdc-button mdc-button--compact mdc-card__action\" href=\"" + url + "\" target=\"_blank\">Visit Site</a>"
+      }
+      if (details) {
+        card += "<button class=\"mdc-button mdc-button--compact mdc-card__action adamyi-modal-button\" adamyi-modal-header=\"" + name + "\" adamyi-modal-details=\"" + details + "\">Read More</button>";
+      }
+      card += "</section></div>";
+      items.push(card);
     });
 
     $('.adamyi-main-wide').html(items.join(""));
