@@ -1,14 +1,37 @@
 [
     {
-        "name": "Test Project 1",
-        "abstract_text": "This is a test.",
-        "url": "https://yiad.am/",
+        "name": "MUNPANEL",
+        "abstract_text": "Founder and CTO of a Model UN platform that radically changes how Model UN works in China",
+        "details": "/munpanel.html",
+        "url": "https://www.munpanel.com/",
+        "image": "https://material-components-web.appspot.com/images/16-9.jpg",
+        "tags": [
+            "test"
+        ]
+    },
+    {
+        "name": "MessageOnTap",
+        "abstract_text": "Researcher at CHIMPS Lab HCII Carnegie Mellon University",
+        "details": "/messageontap.html",
+        "url": "https://www.github.com/MessageOnTap/",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     },
     {
-        "name": "Test Project 2",
-        "abstract_text": "This is another test lol.",
-        "details": "/test.html",
+        "name": "Google",
+        "abstract_text": "Translated subtitles of keynotes and sessions of I/O 2016 and 2017 and got invited to Beijing Office and I/O 2017 by Google DevRel",
+        "url": "https://www.youtube.com/watch?v=Y2VF8tmLFHw",
+        "image": "https://material-components-web.appspot.com/images/16-9.jpg"
+    },
+    {
+        "name": "Chaoli Forum",
+        "abstract_text": "Member of founding team and initial development team of a forum for Math, Physics, Chemistry and Informatics lovers",
+        "url": "https://www.chaoli.club",
+        "image": "https://material-components-web.appspot.com/images/16-9.jpg"
+    },
+    {
+        "name": "Chaoli Forum",
+        "abstract_text": "Member of founding team and initial development team of a forum for Math, Physics, Chemistry and Informatics lovers",
+        "url": "https://www.chaoli.club",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     }
 ]
