@@ -29,9 +29,9 @@
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     },
     {
-        "name": "Chaoli Forum",
-        "abstract_text": "Member of founding team and initial development team of a forum for Math, Physics, Chemistry and Informatics lovers",
-        "url": "https://www.chaoli.club",
+        "name": "White Hat Hacking",
+        "abstract_text": "Found 10+ vulnerabilities of large companies, like GlobalCash (a prepaid MasterCard provider in Hong Kong), Apple Inc, eYou (one of the two largest email service providers in China), etc.",
+        "details": "/whitehat.html",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     }
 ]
