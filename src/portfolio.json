@@ -1,7 +1,7 @@
 [
     {
         "name": "MUNPANEL",
-        "abstract_text": "Founder and CTO of a Model UN platform that radically changes how Model UN works in China",
+        "abstract_text": "Founder and CTO of a Model UN platform that radically revolutionizes how Model UN works in China",
         "details": "/munpanel.html",
         "url": "https://www.munpanel.com/",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg",
@@ -11,9 +11,21 @@
     },
     {
         "name": "MessageOnTap",
-        "abstract_text": "Researcher at CHIMPS Lab HCII Carnegie Mellon University",
+        "abstract_text": "1 of 4 core researchers in team of 12 at CHIMPS Lab HCII Carnegie Mellon University",
         "details": "/messageontap.html",
         "url": "https://www.github.com/MessageOnTap/",
+        "image": "https://material-components-web.appspot.com/images/16-9.jpg"
+    },
+    {
+        "name": "White Hat Hacking",
+        "abstract_text": "Found 10+ vulnerabilities of large companies, like GlobalCash (a prepaid MasterCard provider in Hong Kong), Apple Inc, eYou (one of the two largest email service providers in China), etc.",
+        "details": "/whitehat.html",
+        "image": "https://material-components-web.appspot.com/images/16-9.jpg"
+    },
+    {
+        "name": "PersonalGraph",
+        "abstract_text": "Researcher at CHIMPS Lab HCII Carnegie Mellon University",
+        "details": "/pkg.html",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     },
     {
@@ -23,15 +35,15 @@
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     },
     {
-        "name": "Chaoli Forum",
-        "abstract_text": "Member of founding team and initial development team of a forum for Math, Physics, Chemistry and Informatics lovers",
-        "url": "https://www.chaoli.club",
+        "name": "DeepScrub",
+        "abstract_text": "Researcher at CHIMPS Lab HCII Carnegie Mellon University",
+        "url": "https://scrubber.yiad.am",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     },
     {
-        "name": "White Hat Hacking",
-        "abstract_text": "Found 10+ vulnerabilities of large companies, like GlobalCash (a prepaid MasterCard provider in Hong Kong), Apple Inc, eYou (one of the two largest email service providers in China), etc.",
-        "details": "/whitehat.html",
+        "name": "Chaoli Forum",
+        "abstract_text": "Member of founding team and initial development team of a forum for Math, Physics, Chemistry and Informatics lovers",
+        "url": "https://www.chaoli.club",
         "image": "https://material-components-web.appspot.com/images/16-9.jpg"
     }
 ]
