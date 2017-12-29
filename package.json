@@ -36,7 +36,9 @@
     "@material/elevation": "^0.1.11",
     "@material/layout-grid": "^0.4.2",
     "@material/toolbar": "^0.4.4",
-    "@material/typography": "^0.3.0"
+    "@material/typography": "^0.3.0",
+    "jpegtran-bin": "^3.2.0",
+    "optipng-bin": "^4.0.0"
   },
   "engines": {
     "node": ">=0.12"

@@ -56,8 +56,8 @@
               case 'installed':
                 // At this point, the old content will have been purged and the
                 // fresh content will have been added to the cache.
-                // It's the perfect time to display a "New content is
-                // available; please refresh." message in the page's interface.
+                document.body.innerHTML = "This page has been updated since you last visited. Please refresh if it doesn't refresh automatically. Thank you.";
+                setTimeout("location.reload()", 3500); 
                 break;
 
               case 'redundant':

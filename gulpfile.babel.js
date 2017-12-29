@@ -68,6 +68,12 @@ gulp.task('fonts', () =>
   .pipe(gulp.dest('dist/fonts'))
 );
 
+// Copy CV viewer
+gulp.task('viewcv', () =>
+  gulp.src('src/viewcv/**/*')
+  .pipe(gulp.dest('dist/viewcv'))
+);
+
 // Compile and automatically prefix stylesheets
 gulp.task('styles', () => {
   const AUTOPREFIXER_BROWSERS = [
@@ -202,7 +208,7 @@ gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
     //['lint', 'html', 'scripts', 'images', 'fonts', 'copy'],
-    ['html', 'scripts', 'images', 'fonts', 'copy'],
+    ['viewcv', 'html', 'scripts', 'images', 'fonts', 'copy'],
     'generate-service-worker',
     cb
   )
@@ -244,6 +250,7 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
       `${rootDir}/images/**/*`,
       `${rootDir}/scripts/**/*.js`,
       `${rootDir}/styles/**/*.css`,
+      `${rootDir}/fonts/*`,
       `${rootDir}/*.{html,json}`
     ],
     // Translates a static file path to the relative URL that it's served from.

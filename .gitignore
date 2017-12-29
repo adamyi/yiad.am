@@ -4,3 +4,4 @@ dist/
 .tmp
 app.yaml
 yarn.lock
+package-lock.json
